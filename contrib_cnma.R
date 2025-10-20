@@ -134,11 +134,12 @@ component_analysis <- function(Xa, Ha, s, kmax = 4) {
         
         flows <- sapply(comb_idx_chr, function(i) edges[[i]])
         weighted_flows <- flows / sol
-        min_flow <- min(flows)
         phi <- min(weighted_flows)
         
-        for (i_chr in comb_idx_chr) {
-          new_flow <- edges[[i_chr]] - min_flow
+        for (j in seq_along(comb_idx_chr)) {
+          i_chr <- comb_idx_chr[j]
+          used  <- phi * sol[j]
+          new_flow <- edges[[i_chr]] - used
           if (new_flow < 1e-4) {
             edges[[i_chr]] <- NULL
           } else {
@@ -328,7 +329,7 @@ cnma_contrib <- function(cnma, component, inactive, random = TRUE, fixed = NULL,
 
 
 
-# Function cnma_contrib (x, "component", "inactive", random, kmax)
+# cnma_contrib (x, "component", "inactive", random, kmax)
 #
 # Arguments:
 #   x: An object of 'discomb' or 'netcomb', available for both additive and interaction models..

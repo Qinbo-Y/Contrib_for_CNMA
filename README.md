@@ -32,12 +32,14 @@ source("contrib_cnma.R")
 ````
 
 The function **`cnma_contrib (x, "component", "inactive", random, kmax)`**  is used to compute and output the results of pseudo-path identification and flow allocation in CNMA.
+
 Arguments:
-  x: An object of class 'discomb' or 'netcomb', available for both additive and interaction models.
-  component: A character string defining the target component whose contribution is to be analyzed.
-  inactive: A character string defining the inactive (reference) treatment component.
-  random: A logical indicating whether a random-effects CNMA should be conducted.
-  kmax: Maximum length of pseudo paths to consider. Default is 4.
+
+  - x: An object of class 'discomb' or 'netcomb', available for both additive and interaction models.
+  - component: A character string defining the target component whose contribution is to be analyzed.
+  - inactive: A character string defining the inactive (reference) treatment component.
+  - random: A logical indicating whether a random-effects CNMA should be conducted.
+  - kmax: Maximum length of pseudo paths to consider. Default is 4.
 
 Returns three data frames:
   - Paths: pseudo paths and their assigned flows (φ) representing contributions to the target component.

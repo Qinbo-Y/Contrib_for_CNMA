@@ -2,7 +2,7 @@
 library(lpSolve)
 library(MASS)
 
-# ---- helper functions -------------------------------------------------
+# ---- functions -------------------------------------------------
 generate_comparisons <- function(Xa, comps, inactive) {
   comparisons <- character(nrow(Xa))
   
@@ -175,7 +175,7 @@ component_analysis <- function(Xa, Ha, s, kmax = 4) {
       }
     }
   }
-  proportion <- round(proportion, 5)
+  proportion <- round(proportion, 4)
   
   # Residual allocation
   leftover_edges <- list()
@@ -194,7 +194,7 @@ component_analysis <- function(Xa, Ha, s, kmax = 4) {
       }
     }
   }
-  proportion <- round(proportion, 5)
+  proportion <- round(proportion, 4)
   
   return(list(
     stream = stream,

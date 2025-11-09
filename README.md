@@ -44,8 +44,7 @@ Arguments:
 Returns three data frames:
   - Paths: pseudo paths and their assigned flows (φ) representing contributions to the target component.
   - Proportion_for_edges: proportional contributions of each edge in the CNMA network.
-  - Comparisons_in_CNMA: original study-level comparisons, their CNMA model representation, 
-    and whether they contributed to the integrated direct estimate.
+  - Comparisons_in_CNMA: original study-level comparisons, their representations in the CNMA model.
 
 ## 3. Load dataset
 ```r
